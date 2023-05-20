@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Регистрация</title>
+        <link rel="stylesheet" href="{ static 'css/style.css' %}"/>
+    </head>
+    {% block content %}
+    <body>
+        {% if user.is_authenticated %}
+            <a href="{% url 'home' %}">Главная страница</a>
+            <a href="{% url 'dishes' %}">Блюда</a>
+            <a href="{% url 'special_offers' %}">Акции</a>
+            <a href="{% url 'logout' %}">Выход</a>
+            <h1>Для регистрации нового пользователя необходимо выйти с аккаунта</h1>
+        {% else %}
+            <a href="{% url 'home' %}">Главная страница</a>
+            <a href="{% url 'login' %}">Войти</a>
+            <a href="{% url 'signup' %}">Регистрация</a>
+            <h1>Для регистрации введите имя и пароль</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="{{ form.username.id_for_label }}">Логин:</label>
+                {{ form.username }}
+                <label for="{{ form.password1.id_for_label }}">Пароль:</label>
+                {{ form.password1 }}
+                <label for="{{ form.password2.id_for_label }}">Подтвердите пароль:</label>
+                {{ form.password2 }}
+                <button type="submit">Зарегистрировать</button>
+            </form>
+        {% endif %}
+    {% endblock content %}
+    </body>
+    <script src="{% static 'js/script.js' $}" ></script>
+</html>

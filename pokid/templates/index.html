@@ -1,0 +1,269 @@
+<head xmlns="http://www.w3.org/1999/html">
+<title>Main Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+            <a href="{% url 'index' %}">Измерения</a>
+            <a href="{% url 'dishes' %}">Блюда</a>
+            <a href="{% url 'special_offers' %}">Акции</a>
+            <a href="{% url 'logout' %}">Выход</a>
+  <style type="text/css">
+
+   body {
+
+       background-color: #7B68EE;
+
+   }
+   .select-css {
+display: block;
+font-size: 16px;
+font-family: sans-serif;
+font-weight: 700;
+color: #444;
+line-height: 1.3;
+padding: .6em 1.4em .5em .8em; width: 100%;
+max-width: 300px;
+box-sizing: border-box;
+margin: 0;
+border: 1px solid #aaa;
+ box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+border-radius: .5em;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ appearance: none;
+ background-color: #fff;
+background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+background-repeat: no-repeat, repeat;
+background-position: right .7em top 50%, 0 0;
+background-size: .65em auto, 100%;
+}
+ .select-css::-ms-expand { display: none; }
+ .select-css:hover { border-color: #888; }
+ .select-css:focus { border-color: #aaa;
+ box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+ box-shadow: 0 0 0 3px -moz-mac-focusring;
+color: #222;
+ outline: none;
+}
+ .select-css option { font-weight:normal; }
+ *[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+background-position: left .7em top 50%, 0 0;
+padding: .6em .8em .5em 1.4em;
+}
+
+.select-css1 {
+display: block;
+font-size: 16px;
+font-family: sans-serif;
+font-weight: 700;
+color: #444;
+line-height: 1.3;
+padding: .6em 1.4em .5em .8em; width: 100%;
+max-width: 300px;
+box-sizing: border-box;
+margin: 0;
+border: 1px solid #aaa;
+ box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+border-radius: .5em;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ appearance: none;
+ background-color: #fff;
+background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+background-repeat: no-repeat, repeat;
+background-position: right .7em top 50%, 0 0;
+background-size: .65em auto, 100%;
+}
+ .select-css1::-ms-expand { display: none; }
+ .select-css:hover { border-color: #888; }
+ .select-css:focus { border-color: #aaa;
+ box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+ box-shadow: 0 0 0 3px -moz-mac-focusring;
+color: #222;
+ outline: none;
+}
+
+
+
+
+
+
+   /* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+  cursor:pointer;
+  background-color: #298000;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+
+}
+
+.custom-dropdown select[disabled]::after {
+
+}
+
+.custom-dropdown::before {
+
+}
+
+.custom-dropdown::after {
+
+}
+.custom-dropdown1 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+}
+
+
+
+
+
+
+
+
+
+body {
+  background: url(https://html5book.ru/wp-content/uploads/2015/07/background39.png);
+}
+.floating-button {
+  text-decoration: none;
+  display: inline-block;
+  width: 80px;
+  height: 47px;
+  line-height: 45px;
+  border-radius: 15px;
+  margin: 15px 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+}
+.floating-button:hover {
+  background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+  color: white;
+  transform: translateY(-7px);
+}
+
+
+  select {
+    width: 300px; /* Ширина списка в пикселах */
+   }
+.parent
+{
+}
+.child
+{
+display: inline-block;
+}
+Источник: https://web-sprints.ru/css-elementyi-v-stroku
+  </style>
+
+<!--<form>-->
+<!--  <select name="select" aria-label="Default select example" class="parent custom-dropdown select-css" >-->
+<!--    <option атрибуты>Пункт 1</option>-->
+<!--    <option атрибуты>Пункт 2</option>-->
+<!--  </select>-->
+<!--    <input type="datetime-local" id="date1" name="date" class = "custom-dropdown1 child select-css1"/>-->
+<!--    <input type="datetime-local" id="date2" name="date" class = "custom-dropdown1 child select-css1"/>-->
+<!--</form>-->
+
+
+<form action="/" method="post" id="c-form" > {% csrf_token %}</form>
+  <select name="children" form="c-form" id = "children" aria-label="Default select example" class="parent custom-dropdown select-css">
+    {% for ch in children %}
+      <option id = {{ch.child_id}}>{{ ch.child_name }} {{ ch.child_surname }} </option>
+    {% endfor %}
+  </select>
+  <input type="datetime-local" id="date1" name="date" class = "custom-dropdown1 child select-css1"/>
+  <input type="datetime-local" id="date2" name="date" class = "custom-dropdown1 child select-css1"/>
+  <input type="reset" form="c-form" class = "floating-button  child ">
+  <input type="submit" form="c-form" id="elem" class = " floating-button  child ">
+  <script>
+var sel = document.getElementsByTagName('select');
+
+sel[0].onchange = function () {
+  var id=this.options[this.selectedIndex].id;
+  alert (id);
+ };
+ let element = document.querySelector('#child_id');
+
+element.innerHTML = id;
+function GetDivElement() {
+    return id;
+  }
+  </script>
+</head>
+
+<div>
+  <table class="table table-info">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Дата и время</th>
+        <th scope="col">Температура</th>
+        <th scope="col">Пульс</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+
+    {% for m in measures %}
+      <tr>
+        <th scope="row">{{m}}</th>
+        <td>{{m.date_time}}</td>
+        <td>{{m.temp}}</td>
+        <td>{{m.pulse}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
